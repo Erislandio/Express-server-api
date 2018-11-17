@@ -23,6 +23,11 @@ app.post('/produtos', (req, res, next) => {
     res.send(produto)
 })
 
+app.delete('/produtos/:id', (req, res, next) => {
+    const produto = db.deleteProd(req.param.id)
+    res.send(produto)
+})
+
 app.listen(port, () => {
     console.log(`Server porte: ${port}...`)
 })
